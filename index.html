@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub Study Jam - HCMUTE DSC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="image/logo_clb.jpg" alt="Logo" />
+          <span class="logo-text"
+            >HCMUTE <span class="highlight">DSC</span></span
+          >
+        </div>
+
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="nav-link active"
+                onclick="switchTab('home', this)"
+                ><i class="fas fa-home"></i> Trang chủ</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" onclick="switchTab('about', this)"
+                ><i class="fas fa-users"></i> Về chúng tôi</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" onclick="switchTab('contact', this)"
+                ><i class="fas fa-envelope"></i> Liên hệ</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main>
+      <section id="home" class="tab-content active fade-in"></section>
+
+      <section id="about" class="tab-content fade-in"></section>
+
+      <section id="contact" class="tab-content fade-in"></section>
+    </main>
+
+    <script>
+      function switchTab(tabId, element) {
+        // 1. Xử lý nội dung
+        const contents = document.querySelectorAll(".tab-content");
+        contents.forEach((content) => {
+          content.classList.remove("active");
+          // Reset animation bằng cách xóa và thêm lại class nếu cần,
+          // ở đây CSS animation sẽ tự chạy khi có display: block
+        });
+
+        // 2. Xử lý menu
+        const links = document.querySelectorAll(".nav-link");
+        links.forEach((link) => link.classList.remove("active"));
+
+        // 3. Kích hoạt tab mới
+        document.getElementById(tabId).classList.add("active");
+        element.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
