@@ -280,3 +280,99 @@ main {
         font-size: 0.85rem;
     }
 }
+
+/* Lưới chứa các thành viên (Flexbox) */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Tự động xuống dòng nếu nhiều người */
+    justify-content: center; /* Căn giữa */
+    gap: 3rem; /* Khoảng cách giữa các thẻ */
+}
+
+/* Thẻ thành viên */
+.member-card {
+    background: white;
+    border-radius: 25px;
+    width: 400px; /* Chiều rộng cố định của thẻ */
+    max-width: 100%;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-15px); /* Bay cao hơn chút nữa */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.member-img-wrapper {
+    width: 180px;  /* Tăng kích thước ảnh (Cũ là 120px) */
+    height: 180px;
+    margin: 0 auto 2rem; /* Đẩy nội dung bên dưới xuống xa hơn */
+    position: relative;
+}
+
+.member-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white; /* Viền dày hơn */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Thông tin thành viên */
+.member-name {
+    font-size: 2rem; /* Tên to rõ ràng (Cũ là 1.5rem) */
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.member-role {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--google-blue);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.member-bio {
+    font-size: 1.1rem; /* Chữ mô tả to hơn cho dễ đọc */
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+/* Nút mạng xã hội */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Các icon cách xa nhau hơn */
+}
+
+.social-icon {
+    width: 50px;  /* Icon to hơn (Cũ là 40px) */
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem; /* Icon bên trong to hơn */
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+/* Giữ nguyên màu các nút MXH */
+.facebook { background-color: #1877F2; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.linkedin { background-color: #0077B5; }
+.github { background-color: #333; }
