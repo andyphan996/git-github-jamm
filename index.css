@@ -376,3 +376,96 @@ main {
 .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .linkedin { background-color: #0077B5; }
 .github { background-color: #333; }
+
+/* =========================================
+   8. CSS CHO TRANG "LIÊN HỆ"
+   ========================================= */
+
+/* Căn chỉnh khung chứa form */
+.contact-container {
+    max-width: 600px; /* Giới hạn chiều rộng để form không bị bè ra quá */
+    margin: 0 auto;   /* Căn giữa màn hình */
+}
+
+/* Các nhóm nhập liệu */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left; /* Căn chữ label sang trái */
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+/* Bao quanh input để chèn icon */
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 15px; /* Căn chỉnh icon nằm giữa theo chiều dọc */
+    color: var(--text-gray);
+    transition: color 0.3s;
+}
+
+/* Ô nhập liệu (Input & Textarea) */
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Padding trái lớn để chừa chỗ cho icon */
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Hiệu ứng khi bấm vào ô nhập liệu (Focus) */
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--google-blue); /* Viền chuyển màu xanh */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(66, 133, 244, 0.1);
+}
+
+/* Khi focus thì icon cũng đổi màu theo */
+.form-group input:focus + .input-icon,
+.form-group textarea:focus + .input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: var(--google-blue);
+}
+
+/* Nút Gửi */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, var(--google-blue), #2962ff);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Nút bo tròn */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px); /* Nút bay lên nhẹ */
+    box-shadow: 0 8px 20px rgba(66, 133, 244, 0.4);
+    background: linear-gradient(45deg, #2962ff, var(--google-blue));
+}
+
+.btn-submit:active {
+    transform: scale(0.98); /* Hiệu ứng nhấn xuống */
+}
